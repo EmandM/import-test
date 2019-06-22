@@ -1,0 +1,32 @@
+{
+  "name": "import-test",
+  "version": "0.0.1",
+  "description": "Test ts-mock-import deployment",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/EmandM/import-test.git"
+  },
+  "author": "Emma McMillan <emma.lou.mcmillan@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "unit-test": "mocha -r ts-node/register test/**/*.spec.ts",
+    "test": "npm run unit-test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.7",
+    "@types/sinon": "5.0.5",
+    "chai": "^4.2.0",
+    "dtslint": "0.3.0",
+    "mocha": "^6.1.4",
+    "rimraf": "^2.6.3",
+    "sinon": "^7.3.2",
+    "ts-mock-imports": "file:../ts-mock-imports/ts-mock-imports-1.2.6.tgz",
+    "ts-node": "^8.3.0",
+    "tslint": "^5.18.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "tslint-no-unused-expression-chai": "^0.1.4",
+    "typescript": "^3.5.2"
+  }
+}
