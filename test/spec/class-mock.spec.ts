@@ -25,6 +25,35 @@ describe('Class Mock', () => {
       manager.restore();
     });
 
+    it('.mock should return given object', () => {
+      const manager = ImportMock.mockClass(testClass, 'TestClass');
+      manager.mock("foo", true)
+      const consumer = new TestClassConsumer();
+      expect(consumer.foo()).to.be.true;
+      manager.restore();
+    });
+
+    it('.set should set given value', () => {
+      const manager = ImportMock.mockClass(testClass, 'TestClass');
+      manager.set("count", 5)
+      const consumer = new TestClassConsumer();
+      expect(consumer.getCount()).to.equal(5);
+      manager.restore();
+    });
+
+    it('.mock should replace function', () => {
+      const manager = ImportMock.mockClass(testClass, 'TestClass');
+      let stub = manager.mock("foo")
+      var count = 0;
+      stub.callsFake(() => {
+        count++;
+      });
+      const consumer = new TestClassConsumer();
+      expect(consumer.foo()).to.be.undefined;
+      expect(count).to.equal(1)
+      manager.restore();
+    });
+
   });
 
   describe('Mock Static Class', () => {

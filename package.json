@@ -10,12 +10,14 @@
   "license": "MIT",
   "scripts": {
     "unit-test": "mocha -r ts-node/register test/**/*.spec.ts",
-    "test": "npm run unit-test"
+    "test": "npm run unit-test",
+    "debug": "npm run unit-test --debug-brk"
   },
   "dependencies": {},
   "devDependencies": {
     "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.7",
+    "@types/node": "^12.7.4",
     "@types/sinon": "5.0.5",
     "chai": "^4.2.0",
     "dtslint": "0.3.0",
