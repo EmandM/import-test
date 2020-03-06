@@ -24,7 +24,7 @@
     "mocha": "^6.1.4",
     "rimraf": "^2.6.3",
     "sinon": "^7.3.2",
-    "ts-mock-imports": "file:../ts-mock-imports/ts-mock-imports-1.2.6.tgz",
+    "ts-mock-imports": "^1.2.6",
     "ts-node": "^8.3.0",
     "tslint": "^5.18.0",
     "tslint-config-airbnb": "^5.11.1",
