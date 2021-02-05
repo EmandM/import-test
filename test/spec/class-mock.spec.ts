@@ -42,6 +42,24 @@ describe('Class Mock', () => {
       manager.restore();
     });
 
+    it('should contain given value when setting a variable', () => {
+      const manager = ImportMock.mockClass(testClass, 'TestClass');
+      const consumer = new TestClassConsumer();
+      const newVal = 6;
+      manager.set('someProp', {someFunc: ()=>newVal, foo: 'baz'});
+      expect(consumer.callInner()).to.equal(newVal);
+      manager.restore();
+    });
+
+    it('should accept a partial replacement when setting a variable', () => {
+      const manager = ImportMock.mockClass(testClass, 'TestClass');
+      const consumer = new TestClassConsumer();
+      const newVal = 6;
+      manager.set('someProp', {someFunc: ()=>newVal});
+      expect(consumer.callInner()).to.equal(newVal);
+      manager.restore();
+    });
+
     it('.mock should replace function', () => {
       const manager = ImportMock.mockClass(testClass, 'TestClass');
       let stub = manager.mock("foo")
